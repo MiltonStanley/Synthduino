@@ -1,24 +1,25 @@
 #include "note.h"
 #include "pitches.h"
+#define LENGTH 4
 
-void setup() {
+int notes[] = {NOTE_C4, NOTE_E4, NOTE_G4, NOTE_C5};
+int durations[] = {2, 4, 4, 1};
+Note melody[4];
+Note theNote(NOTE_A4, 2);
+  
+void setup(){
   pinMode(12, OUTPUT);
+  for(int i=0; i<4; i++){
+    Note temp(notes[i], durations[i]);
+    melody[i] = temp;
+  }
 }
 
-  int notes[] = {NOTE_C4, NOTE_E4, NOTE_G4, NOTE_C5};
-  int durations[] {2, 4, 4, 1};
-
-//  Note melody[4];
-  Note theNote(NOTE_A4, 2);
-  
-  //for(int i=0; i<4; i++){
-//    melody[i] = Note temp(notes[i],durations[i])
-  //}
-
 void loop() {
-  //theNote.playDelay(12);
-  theNote.playTimer(12);
-  delay(500);
+  for(int i=0; i<LENGTH; i++){
+    melody[i].play(12);
+  }
+ //theNote.play(12); 
 }
 
 // 120 bmp = 120 qNotes/60 seconds = 2 Hz freq, period = .5 sec = 500k millis

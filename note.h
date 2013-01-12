@@ -5,11 +5,12 @@
 
 class Note {
  public:
+  Note(){} // This is kludgy - to allow Note array initialization w/ empty values
   Note(int _frequency, int _duration);//{frequency = _frequency; duration = _duration;};
   ~Note(){};
   int getFrequency(){return frequency;};
   void playDelay(int pin);
-  void playTimer(int pin);
+  void play(int pin);
   int frequency;  // in Hz
   int period;     // in microseconds
   int duration;   // Music value
@@ -30,7 +31,7 @@ void Note::playDelay(int pin) {
   delayMicroseconds(period);
 }
 
-void Note::playTimer(int pin) {
+void Note::play(int pin) {
   unsigned long start = micros();       // Current time in microseconds
   bool state = HIGH;          // keep track of current pin state (set high)
   unsigned long off = start + 1000000;
