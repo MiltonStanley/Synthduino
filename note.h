@@ -8,7 +8,7 @@ class Note{
   Note(int _frequency, int _duration);//{frequency = _frequency; duration = _duration;};
   ~Note(){};
   int getFrequency(){return frequency;};
-  void play(int pin);
+  void playDelay(int pin);
   int frequency;  // in Hz
   int period;     // in microseconds
   int duration;   // Music value
@@ -20,10 +20,10 @@ Note::Note(int _frequency, int _duration) {
   duration = _duration;
 }
 
-void Note::play(int pin){
-  digitalWrite(pin, 1);
-  delayMicroseconds(frequency);
-  digitalWrite(pin, 0);
-  delayMicroseconds(frequency);
+void Note::playDelay(int pin){
+  digitalWrite(pin, HIGH);
+  delayMicroseconds(period);
+  digitalWrite(pin, LOW);
+  delayMicroseconds(period);
 }
 #endif
