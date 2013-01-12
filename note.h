@@ -13,6 +13,7 @@ class Note {
   int frequency;  // in Hz
   int period;     // in microseconds
   int duration;   // Music value
+  unsigned long length;
 };
 
 Note::Note(int _frequency, int _duration) {
@@ -30,12 +31,12 @@ void Note::playDelay(int pin) {
 }
 
 void Note::playTimer(int pin) {
-  int start = micros();       // Current time in microseconds
+  unsigned long start = micros();       // Current time in microseconds
   bool state = HIGH;          // keep track of current pin state (set high)
-  int end = start + length;
+  unsigned long off = start + 1000000;
   digitalWrite(pin, state);    // Pin goes HIGH
-  int toggle = start + period;  // Should stay high until toggle (start + period)
-  while (micros() < end){
+  unsigned long toggle = start + period;  // Should stay high until toggle (start + period)
+  while (micros() < off){
     if (micros() > toggle) {      // If micros > toggle, need to toggle
       state = !state;
       digitalWrite(pin, state);
@@ -49,6 +50,8 @@ void Note::playTimer(int pin) {
 
 /* start = 1000
  * state = HIGH
+ * off = 1,001,000
  * write high
  * toggle = start + period = 1000 + 2500 = 3500
  * if micros > 
+ */
