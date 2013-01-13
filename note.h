@@ -23,6 +23,13 @@ Note::Note(int _frequency, int _duration) {
   duration = _duration;
   length = (1.0/duration) * 1000000; // Note ends length microseconds after it starts
 }
+ 
+// duration is 1/8 note, etc.
+// Length = 1/duration * 1M 
+// TEMPO = beats per minute - duration 4 = 60 seconds ~ TEMPO
+// SO length (in seconds) = TEMPO / 60 / DURATION
+// IE 120 BPM, 1/4 note = 120 / 60 / 4 = .5 (1/2 second) * 1M to get millis
+
 
 void Note::playDelay(int pin) {
   digitalWrite(pin, HIGH);

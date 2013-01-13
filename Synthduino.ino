@@ -2,6 +2,8 @@
 #include "pitches.h"
 #define LENGTH 32
 
+/* 
+// Alberti Baseline
 int notes[] = {NOTE_C4, NOTE_G4, NOTE_E4, NOTE_G4,
 							 NOTE_C4, NOTE_G4, NOTE_E4, NOTE_G4,
 							 NOTE_B3, NOTE_G4, NOTE_F4, NOTE_G4,
@@ -14,6 +16,8 @@ int notes[] = {NOTE_C4, NOTE_G4, NOTE_E4, NOTE_G4,
 int durations[] = { 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
 										4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4				
 									};
+ */
+
 Note melody[LENGTH];
 Note theNote(NOTE_A4, 2);
   
