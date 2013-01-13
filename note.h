@@ -34,7 +34,7 @@ void Note::playDelay(int pin) {
 void Note::play(int pin) {
   unsigned long start = micros();       // Current time in microseconds
   bool state = HIGH;          // keep track of current pin state (set high)
-  unsigned long off = start + 1000000;
+  unsigned long off = start + length;
   digitalWrite(pin, state);    // Pin goes HIGH
   unsigned long toggle = start + period;  // Should stay high until toggle (start + period)
   while (micros() < off){
