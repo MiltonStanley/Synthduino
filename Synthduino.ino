@@ -1,8 +1,5 @@
 #include "note.h"
 #include "pitches.h"
-//#include <pnew.cpp>
-#include <iterator>
-#include <vector>
 
 #define BASS 12
 
