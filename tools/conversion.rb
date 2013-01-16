@@ -1,9 +1,9 @@
+NEW_NAME = 'pitches.h'
+
 old_file = File.open('../pitches.h', 'r')
-new_file = File.new('pitches.h', 'w')
+new_file = File.new(NEW_NAME, 'w')
 
 while line = old_file.gets
-	new_file.puts line
-	new_file.puts line.gsub!('NOTE_','n')
+	puts line
+	puts line.gsub!('NOTE_','n')
 end
-
-`cat new_file`
