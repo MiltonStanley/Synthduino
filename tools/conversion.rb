@@ -11,13 +11,30 @@
 ##########################
 
 NEW_NAME = 'pitches.h'
+puts
 
-old_file = File.open('../pitches.h', 'r')
+begin
+	old_file = File.open('../pitches.h', 'r')
+	puts "File opened..." if old_file
+rescue
+	puts "Error!!! File not found! Did you copy it into the MAIN Synthduino directory?"
+	puts
+	Process.exit!
+end
+
+
 new_file = File.new(NEW_NAME, 'w')
 
-DEST = new_file
-
 class String
+
+	def skip?
+		self =~ /^\/\*/ 				|| 			# start of C++ multiline comment
+		self =~ /\*\/$/ 			  || 			# end of C++ multiline comment
+		self.include?('Public Constants') ||
+		!(self.include?('S'))	||			# Natural note
+		self.length < 2 							# Blank line
+			 						# I love Regexp!
+	end
 
 	def abbreviate
 		self.gsub('NOTE_','n')
@@ -36,11 +53,50 @@ class String
 		self
 	end
 
+	def justify
+		a,b,c = self.split(' ')
+		a + ' ' + b + '     ' + c
+	end
+
 end
 
+puts "Processing file..."
+
 while line = old_file.gets
-	DEST.puts line
-	DEST.puts line.abbreviate
-	DEST.puts line.transpose if line.enharmonic?
-	DEST.puts line.abbreviate
+	new_file.puts line
+	new_file.puts line.abbreviate.justify unless line.skip?
+	next if line.skip?
+	new_file.puts line.transpose if line.enharmonic?
+	new_file.puts line.abbreviate.justify
 end
+
+new_file.puts "#define REST 0"
+old_file.close
+
+puts "File processed, moving to main directory..."
+
+=begin
+if RUBY_PLATFORM =~ (/cygwin|mswin|mingw|bccwin|wince|emx/)
+	command = "copy"
+else
+	command = "cp"
+end
+=end
+
+# Faking it; can't get system "#{command} ./pitches ../pitches" to work
+new_file.close
+new_file = File.open('pitches.h','r')
+old_file = File.open('../pitches.h', 'w')
+
+while line = new_file.gets
+	old_file.puts line
+end
+
+puts "Cleaning up temp files"
+old_file.close
+new_file.close
+File.delete(new_file)
+
+puts "Conversion complete!"
+
+puts
