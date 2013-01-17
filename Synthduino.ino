@@ -7,11 +7,11 @@
  *
  */
 
-/* TO-DO
+/* TODO
  *
- * 1) Convert pitches to format nXX, instead of NOTE_XX
+ * 1) [DONE] Convert pitches to format nXX, instead of NOTE_XX
  * 2) Add support for Constant declarations of notes - EIGHTH instead of 8
- * 3) Add enharmonics
+ * 3) [DONE] Add enharmonics
  *   ------- 	All these following classes use memory format note->end, where end is an offset from
  *						the overall start time (instead of just duration), so
  							{A4, 8}, {CS5, 8}, {E5, 8} becomes {A4, 8}, {CS5, 16}, {E5, 24}, converted to millis
