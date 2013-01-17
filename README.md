@@ -9,17 +9,20 @@ Usage
 ### How it Works
 Generates square waves on designated pin, based on frequency and duration provided in Note class.
 
-### Sample Cpde
+### Sample Code
 Subject to change as core develops!!!
 
 Declaring an eighth note of pitch A4 (440 hz)
+
     Note one(nA4, 8)
 
 Declaring a melody line
+
     Note melody[] = { {E4,4}, {D4,4}, {C4,4}, {D4,4}, {E4,4}, {E4,4}, {E4,4} }
     int MELODY_LENGTH = 7       // this will change later and be automatic
 
 Playing the melody line
+
     for(int i=0; i<MELODY_LENGTH; i++) {
       melody[i].play(12)    // play the note on pin 12
     }
