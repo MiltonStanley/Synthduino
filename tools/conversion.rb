@@ -28,12 +28,7 @@ new_file = File.new(NEW_NAME, 'w')
 class String
 
 	def skip?
-		self =~ /^\/\*/ 				|| 			# start of C++ multiline comment
-		self =~ /\*\/$/ 			  || 			# end of C++ multiline comment
-		self.include?('Public Constants') ||
-		!(self.include?('S'))	||			# Natural note
-		self.length < 2 							# Blank line
-			 						# I love Regexp!
+		!(self.include?"#define")
 	end
 
 	def abbreviate
@@ -42,6 +37,10 @@ class String
 
 	def enharmonic?
 		self.include? 'S'
+	end
+
+	def natural?
+		self.include?("#define") && !((self.include?("S")) || (self.include?"REST"))
 	end
 
 	def transpose
@@ -55,7 +54,10 @@ class String
 
 	def justify
 		a,b,c = self.split(' ')
-		a + ' ' + b + '     ' + c
+		amount = '      ' if self.natural?
+		amount.chop! if (self =~ /n\DF\d/)
+		amount ||= '     '
+		a + ' ' + b + amount + c
 	end
 
 end
@@ -64,8 +66,9 @@ puts "Processing file..."
 
 while line = old_file.gets
 	new_file.puts line
-	new_file.puts line.abbreviate.justify unless line.skip?
 	next if line.skip?
+	new_file.puts line.abbreviate.justify
+	next if line.natural?
 	new_file.puts line.transpose if line.enharmonic?
 	new_file.puts line.abbreviate.justify
 end
