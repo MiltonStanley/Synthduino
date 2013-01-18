@@ -33,17 +33,21 @@
 
 #define TEMPO 120   // Tempo in bpm
 #define BASS 12  		// Bass will be output on pin 12
+#define MELODY 12
 
 Note bassLine[] = { {NOTE_C3, 2}, {NOTE_DS3, 2}, {NOTE_F3, 1} }; // The actual bass part
+Note melody[] = { {NOTE_E4,4}, {NOTE_D4,4}, {NOTE_C4,4}, {NOTE_D4,4}, {NOTE_E4,4}, {NOTE_E4,4}, {NOTE_E4,4} };
+int MELODY_LENGTH = 7;       // this will change later and be automatic
+
 
 // End header Section
 
 void setup(){
-	pinMode(BASS, OUTPUT);
+	pinMode(MELODY, OUTPUT);
 }
 
 void loop() {
   for(int i=0; i<3; i++){
-    bassLine[i].play(12);
+    melody[i].play(MELODY);
   }
 }

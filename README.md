@@ -19,8 +19,8 @@ Declaring an eighth note of pitch A4 (440 hz):
 
 Declaring a melody line:
 
-    Note melody[] = { {E4,4}, {D4,4}, {C4,4}, {D4,4}, {E4,4}, {E4,4}, {E4,4} }
-    int MELODY_LENGTH = 7       // this will change later and be automatic
+    Note melody[] = { {NOTE_E4,4}, {NOTE_D4,4}, {NOTE_C4,4}, {NOTE_D4,4}, {NOTE_E4,4}, {NOTE_E4,4}, {NOTE_E4,4} };
+		int MELODY_LENGTH = 7;       // this will change later and be automatic
 
 
 Playing the above melody line (again, subject to change when Melody class is coded):
