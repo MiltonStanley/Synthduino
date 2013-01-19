@@ -33,7 +33,7 @@
 
 #define TEMPO 120   // Tempo in bpm
 #define BASS 12  		// Bass will be output on pin 12
-#define MELODY 12
+#define MELODY 13
 
 Note bassLine[] = { {NOTE_C3, 2}, {NOTE_DS3, 2}, {NOTE_F3, 1} }; // The actual bass part
 Note melody[] = { {NOTE_E4,4}, {NOTE_D4,4}, {NOTE_C4,4}, {NOTE_D4,4}, {NOTE_E4,4}, {NOTE_E4,4}, {NOTE_E4,4} };
@@ -47,7 +47,8 @@ void setup(){
 }
 
 void loop() {
-  for(int i=0; i<3; i++){
+  for(int i=0; i<MELODY_LENGTH; i++){
     melody[i].play(MELODY);
   }
+  delay(5000);
 }
