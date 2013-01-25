@@ -22,6 +22,7 @@
 
 #include "note.h"
 #include "pitches.h"
+#include "durations.h"
 
 
 /* HEADER SECTION
