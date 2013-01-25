@@ -37,8 +37,12 @@
 #define MELODY 13
 
 //Note a440(nA4, 8);
-//Note bassLine[] = { {NOTE_C3, 2}, {NOTE_DS3, 2}, {NOTE_F3, 1} }; // The actual bass part
-Note melody[] = { {NOTE_E4,4}, {NOTE_D4,4}, {NOTE_C4,4}, {NOTE_D4,4}, {NOTE_E4,4}, {NOTE_E4,4}, {NOTE_E4,4} };
+/*  The below line doesn't work on Windows, as Arduino uses an older version of gcc w/o specifying
+    c++11 support
+      Note bassLine[] = { {NOTE_C3, 2}, {NOTE_DS3, 2}, {NOTE_F3, 1} }; // The actual bass part
+    If you're on Linux (and I guess OSx), you can use the abbreviated notation. Otherwise:
+  */
+Note melody[] = { Note(NOTE_E4,4), Note(NOTE_D4,4), Note(NOTE_C4,4), Note(NOTE_D4,4), Note(NOTE_E4,4), Note(NOTE_E4,4), Note(NOTE_E4,4) };
 int MELODY_LENGTH = 7;       // this will change later and be automatic
 
 
