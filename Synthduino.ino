@@ -10,7 +10,7 @@
 /* TODO
  *
  * 1) [DONE] Convert pitches to format nXX, instead of NOTE_XX
- * 2) Add support for Constant declarations of notes - EIGHTH instead of 8
+ * 2) [DONE] Add support for Constant declarations of notes - EIGHTH instead of 8
  * 3) [DONE] Add enharmonics
  *   ------- 	All these following classes use memory format note->end, where end is an offset from
  *						the overall start time (instead of just duration), so
