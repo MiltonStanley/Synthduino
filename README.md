@@ -39,7 +39,6 @@ Playing the above melody line (again, subject to change when Melody class is cod
 To Do list
 ----------
 
-1. Add support for Constant declarations of notes - EIGHTH instead of 8
-2. Build support for Melody class - vector<note>, with timing offsets
-3. Build support for Channel class - does the actual signalling to pin
-4. Possibly add a mixer class, for handling multiple channels
+1. Build support for Melody class - vector<note>, with timing offsets
+2. Build support for Channel class - does the actual signalling to pin
+3. Possibly add a mixer class, for handling multiple channels
