@@ -38,7 +38,7 @@ Playing the above melody line (again, subject to change when Melody class is cod
 
 To Do list
 ----------
-
+0. Merge StandardCplusplus library's vector into this one to enforce KISS principle.
 1. Build support for Melody class - vector<note>, with timing offsets
-2. Build support for Channel class - does the actual signalling to pin
-3. Possibly add a mixer class, for handling multiple channels
+2. Build support for Channel class - does the actual signalling to pin 
+3. Possibly add a mixer class, for handling multiple channels (merges channels for total timing across all pins)

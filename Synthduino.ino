@@ -7,18 +7,7 @@
  *
  */
 
-/* TODO
- *
- * 1) [DONE] Convert pitches to format nXX, instead of NOTE_XX
- * 2) [DONE] Add support for Constant declarations of notes - EIGHTH instead of 8
- * 3) [DONE] Add enharmonics
- *   ------- 	All these following classes use memory format note->end, where end is an offset from
- *						the overall start time (instead of just duration), so
- 							{A4, 8}, {CS5, 8}, {E5, 8} becomes {A4, 8}, {CS5, 16}, {E5, 24}, converted to millis
- * 4) Build support for Melody class - vector<note>, with timing offsets
- * 5) Build support for Channel class - does the actual signalling to pin
- * 6) Possible add a mixer class, for handling multiple channels
- */
+// TODO now only in README
 
 #include "note.h"
 #include "pitches.h"
@@ -40,10 +29,10 @@
 //Note a440(nA4, 8);
 /*  The below line doesn't work on Windows, as Arduino uses an older version of gcc w/o specifying
     c++11 support
-      Note bassLine[] = { {NOTE_C3, 2}, {NOTE_DS3, 2}, {NOTE_F3, 1} }; // The actual bass part
+      Note bassLine[] = { {nC3, 2}, {nDS3, 2}, {nF3, 1} }; // The actual bass part
     If you're on Linux (and I guess OSx), you can use the abbreviated notation. Otherwise:
   */
-Note melody[] = { Note(NOTE_E4,4), Note(NOTE_D4,4), Note(NOTE_C4,4), Note(NOTE_D4,4), Note(NOTE_E4,4), Note(NOTE_E4,4), Note(NOTE_E4,4) };
+Note melody[] = { Note(nE4,4), Note(nD4,4), Note(nC4,4), Note(nD4,4), Note(nE4,4), Note(nE4,4), Note(nE4,4) };
 int MELODY_LENGTH = 7;       // this will change later and be automatic
 
 
