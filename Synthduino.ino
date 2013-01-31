@@ -2,9 +2,6 @@
  * v. 0.1
  * Milton Stanley, Milte Technologies
  *
- * REQUIRES the StandardCPlusPlus library for Arduino, found at
- * http://www.github.com/maniacbug/StandardCplusplus
- *
  */
 
 // TODO now only in README
