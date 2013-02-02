@@ -1,3 +1,8 @@
+#include <StandardCplusplus.h>
+#include <utility.h>
+#include <unwind-cxx.h>
+#include <system_configuration.h>
+#include <vector>
 /* Synthduino - the Arduino Synthesizer program
  * v. 0.1
  * Milton Stanley, Milte Technologies
@@ -10,6 +15,7 @@
 #include "pitches.h"
 #include "durations.h"
 
+std::vector<int> test;
 
 /* HEADER SECTION
  * Declare your tempo and parts/pins (note parts/pins are recommended in the format below
