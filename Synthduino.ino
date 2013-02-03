@@ -1,21 +1,18 @@
+/* Synthduino - the Arduino Synthesizer program
+ * v. 0.1
+ * Milton Stanley, Milte Technologies
+ */
+
 #include <StandardCplusplus.h>
 #include <utility.h>
 #include <unwind-cxx.h>
 #include <system_configuration.h>
 #include <vector>
-/* Synthduino - the Arduino Synthesizer program
- * v. 0.1
- * Milton Stanley, Milte Technologies
- *
- */
-
-// TODO now only in README
 
 #include "note.h"
 #include "pitches.h"
 #include "durations.h"
-
-std::vector<int> test;
+#include "instrument.h"
 
 /* HEADER SECTION
  * Declare your tempo and parts/pins (note parts/pins are recommended in the format below
@@ -29,7 +26,8 @@ std::vector<int> test;
 #define BASS 12  		// Bass will be output on pin 12
 #define MELODY 13
 
-//Note a440(nA4, 8);
+// Note a440(nA4, 8);
+
 /*  The below line doesn't work on Windows, as Arduino uses an older version of gcc w/o specifying
     c++11 support
       Note bassLine[] = { {nC3, 2}, {nDS3, 2}, {nF3, 1} }; // The actual bass part
