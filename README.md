@@ -19,12 +19,12 @@ Declaring an eighth note of pitch A4 (440 hz):
 
 Declaring a melody line. There are two ways to do this, depending on the compiler your version of the Arduino IDE uses.
 
-First methods (easiest):
+First methods (easiest, works on Linux [newer versions of gcc, etc.]):
 
     Note melody[] = { {nE4,4}, {nD4,4}, {nC4,4}, {nD4,4}, {nE4,4}, {nE4,4}, {nE4,4} }; // 
 		int MELODY_LENGTH = 7;       // this will change later and be automatic
 
-Second method (explicitly naming data type; mainly required on Windows):
+Second method (explicitly naming data type; mainly required on Windows with Arduino IDE):
 
     Note melody[] = { Note(nE4,4), Note(nD4,4), Note(nC4,4), Note(nD4,4), Note(nE4,4), Note(nE4,4), Note(nE4,4) };
     int MELODY_LENGTH = 7;
