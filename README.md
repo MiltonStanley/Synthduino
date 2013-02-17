@@ -1,6 +1,5 @@
 Synthduino
 =============
-
 The Synthesizer library for Arduino
 
 Usage
