@@ -6,10 +6,10 @@ Usage
 -----
 
 ### How it Works
-Generates square waves on designated pin, based on frequency and duration provided in Note class.
+Generates square waves on designated pins.
 
 ### Sample Code
-Subject to change as core develops!!!
+<b>Subject to change as core develops!!!</b>
 
 Declaring an eighth note of pitch A4 (440 hz):
 
@@ -45,3 +45,5 @@ TODO list
   - Compare millis() to key at first point (automatic? point of map is order is irrelevant); if match (or >) then execute command (toggle square wave) and pop it off the front
 3. Possibly add a Mixer class, for handling multiple channels (merges channels for total timing across all pins)
   - Functions: constructor, attach(melody), play()
+
+- Overall - create class that handles timing. Each "note command" is broken into a sequence of "HIGH" and "LOW" commands, each paired with a timing offset. This will let multiple notes be mixed together, for polyphony, as delay, tone, etc. are not being used.
