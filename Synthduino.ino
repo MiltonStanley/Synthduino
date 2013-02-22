@@ -24,19 +24,15 @@
 
 #define TEMPO 120   // Tempo in bpm
 #define BASS 12  		// Bass will be output on pin 12
-#define MELODY 13
+#define MELODY 13   // Melody on pin 13
 
-// Note a440(nA4, 8);
-
-/*  The below line doesn't work on Windows, as Arduino uses an older version of gcc w/o specifying
-    c++11 support
+/*  This format doesn't work on Windows, as Arduino uses an older version of gcc
       Note bassLine[] = { {nC3, 2}, {nDS3, 2}, {nF3, 1} }; // The actual bass part
-    If you're on Linux (and I guess OSx), you can use the abbreviated notation. Otherwise:
+    If you're on Linux (and I guess OSx), you can use this abbreviated notation. Otherwise:
   */
+
 Note melody[] = { Note(nE4,4), Note(nD4,4), Note(nC4,4), Note(nD4,4), Note(nE4,4), Note(nE4,4), Note(nE4,4) };
 int MELODY_LENGTH = 7;       // this will change later and be automatic
-
-
 // End header Section
 
 void setup(){
@@ -48,7 +44,5 @@ void loop() {
   for(int i=0; i<MELODY_LENGTH; i++){
     melody[i].play(MELODY);
   }
-    
-  //a440.play(12);
   delay(5000);
 }
