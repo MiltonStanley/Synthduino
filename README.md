@@ -2,13 +2,8 @@ Synthduino
 =============
 The Synthesizer library for Arduino
 
-Usage
------
-
-### How it Works
-Generates square waves on designated pins.
-
-### Sample Code
+Sample Code
+-----------
 <b>Subject to change as core develops!!!</b>
 
 Declaring an eighth note of pitch A4 (440 hz):
