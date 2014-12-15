@@ -2,6 +2,9 @@ Synthduino
 =============
 The Synthesizer library for Arduino
 
+NOTE I AM REVISING THE API AND STRUCTURE OF THIS PROJECT, so consider this deprecated for a few days.
+-----------------------------------------------------------------------------------------------------
+
 Sample Code
 -----------
 <b>Subject to change as core develops!!!</b>
