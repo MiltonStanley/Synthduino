@@ -2,7 +2,7 @@ Synthduino
 =============
 The Synthesizer library for Arduino
 
-v0.1 (using [Semantic Versioning]{http://semver.org/})
+v0.1 using [Semantic Versioning](http://semver.org/).
 
 Sample Code
 -----------
@@ -22,13 +22,17 @@ Playing a Note:
 
     one.Play(pin);
 
+See examples/SynthduinoNote for more detail.
 
 ROADMAP
 ----------
 v0.2 - play(instrument)
   -Ability to play an instrument
+
 v0.3 - play(Synthduino) [monophonic]
   -Ability to play the synthduino - single instrument
+
 v0.4 - play(synthduino) [polyphonic]
   -'full' version - can play multiple instruments
+  
 **subsequent improvements to follow**
