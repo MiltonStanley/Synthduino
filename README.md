@@ -2,37 +2,28 @@ Synthduino
 =============
 The Synthesizer library for Arduino
 
-v0.1 using [Semantic Versioning](http://semver.org/).
+v0.2 using [Semantic Versioning](http://semver.org/).
 
 Sample Code
 -----------
-<b>Subject to change as core develops!!!</b>
-
-Declaring an eighth note of pitch A4 (440 hz):
-
-    Note one(nA4, EIGHTH);
-    *or*
-    Note one(nA4, 8);
-    *or*
-    Note one(440, EIGHTH);
-    *or*
-    Note one(nA4, 8);
-
-Playing a Note:
-
-    one.Play(pin);
-
-See examples/SynthduinoNote for more detail.
+See the examples folder above.
 
 ROADMAP
 ----------
-v0.2 - play(instrument)
-  -Ability to play an instrument
 
-v0.3 - play(Synthduino) [monophonic]
-  -Ability to play the synthduino - single instrument
-
-v0.4 - play(synthduino) [polyphonic]
-  -'full' version - can play multiple instruments
-  
-**subsequent improvements to follow**
+* 0.1 - Note.play() [completed]
+  - Equivalent of tone()
+* 0.2 - Instrument.play() [completed]
+  - Set up an instrument (a sequence of Notes)
+* 0.3 - Synthduino.play() [in progress - 21 MAR 2015]
+  - Synthduino (monophonic) - single instrument
+* 0.4 - Synthduino.play() [4 APR 2015]
+  - 'Full' version - can play multiple instruments
+* 0.5 - Instrument.build([pitches], [durations]...) [18 APR 2015]
+  - Pass pitch & duration arrays straight in (don't need to declare Note array)
+* 0.6 - Synthduino.build(notes) [02 MAY 2015]
+  - Pass Note array to Synthduino (don't declare Instrument)
+* 0.7 - Synthduino.build(pitches, durations...) [16 MAY 2015]
+  - Pass pitches & durations straight in
+* ...additional features I think of or are recommended
+* 1.0 - full release. [release tba]

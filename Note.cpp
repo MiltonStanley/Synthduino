@@ -50,4 +50,3 @@ unsigned long Note::getToggleRate() {
 	//		off). 500,000 is this, simplified.
 	return 500000 * (1.0 / frequency);
 }
-

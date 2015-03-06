@@ -2,5 +2,6 @@
 #define Synthduino_H
 
 #include "Note.h"
+#include "Instrument.h"
 
 #endif
